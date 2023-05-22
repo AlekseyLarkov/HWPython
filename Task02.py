@@ -9,6 +9,6 @@ if 100 <= number <=999:
     while number > 0:
         sum = sum + (number % 10)
         number = number // 10
-    print(sum)
+    print(F'Сумма цифр цисла {number} = {sum}')
 else:
     print("Введено не трехзначное число!!!")
