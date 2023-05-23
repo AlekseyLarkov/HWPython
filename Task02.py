@@ -4,11 +4,12 @@
 # 100 -> 1 (1 + 0 + 0) |
 
 number = int(input('Введите трехзначное число: '))
+buf = number
 if 100 <= number <=999:
     sum = 0
     while number > 0:
         sum = sum + (number % 10)
         number = number // 10
-    print(F'Сумма цифр цисла {number} = {sum}')
+    print(F'Сумма цифр цисла {buf} = {sum}')
 else:
     print("Введено не трехзначное число!!!")
