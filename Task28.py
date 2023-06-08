@@ -3,3 +3,15 @@
 # *Пример:*
 # 2 2
 #     4 
+
+def Sum(num_1, num_2):
+    if num_2 == 1:
+        return num_2
+    else:
+        num_1 = num_1 + 1
+        return Sum(num_1, num_2 - 1)
+
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+sum = Sum(a, b)
+print(f'Сумма чисел {a} и {b} = {sum}')
