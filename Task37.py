@@ -19,12 +19,16 @@ def Fill_string(numb):
         return str_a
 
 def Print_expand_string(str_a):
-    if len(str_a) == 1:
+    if str_a < 10:
         print(str_a)
     else:
-        print
+        buf = str_a % 10
+        print(buf)
+        str_a = Print_expand_string(str_a // 10)
 
 n = int(input('Введите число: '))
 string_a = Fill_string(n)
 print(string_a)
+string_a  = int(string_a)
+Print_expand_string(string_a)
     
