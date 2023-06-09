@@ -8,7 +8,7 @@ n = int(input('Введите количество элементов: '))
 d = int(input('Введите разность: '))
 list_a = list()
 for i in range(n):
-    buf = a + ((i - 1) * d)
+    buf = a + (i  * d)
     print(buf)
     list_a.append(buf)
 print(list_a)
