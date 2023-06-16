@@ -12,6 +12,16 @@
 vowels = {'а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е'}
 poem = input('Введите стих Винни-пуха: ')
 poem = poem.split()
-for i in range(len(poem)):
-    for letter in poem[i]:
+result = set()
+for phrase in poem:
+    sum = 0
+    for letter in phrase:
+        if letter in vowels:
+            sum += 1
+    result.add(sum)
+
+if len(result) == 1:
+    print('Парам пам-пам')
+else:
+    print('Пам парам')
 
