@@ -41,11 +41,38 @@ def Entry_phonebook():
         f_entry.writelines('\n')
         f_entry.writelines(f'{name}: {number}')
 
+def Change_phonebook():
+    print('Что вы хотите изменить?')
+    mod1 = int(input('1 - человека, 2 - № телефона: '))
+    with open('E:\Новая папка\Git\HWPython\Task38\phonebook.txt', 'r', encoding='utf-8') as f_change:
+        book = f_change.read().splitlines()
+        book = list(book)
+        human = input('Введите фамилию, имя или отчество: ')
+        for person in book:
+            some_man = person.split(':')
+            buf = some_man[0]
+            number = str(some_man[1])
+            if buf == human:
+                if mod1 == 1:
+                    new_man = input('Введите новое Ф.И.О: ')
+                    person = new_man + ': ' + number
+            else:
+                name = buf.split()
+                for partname in name:
+                    if partname == human:
+                        if mod1 == 1:
+                            new_man = input('Введите новое Ф.И.О: ')
+                            book.remove(person)
+                            person = new_man + ': ' + number
+                            book.append(person)
+        print(book)
 
 print('Добро пожаловать в телефонный справочник!')
 print('Выберите режим работы со справочником:')
-mode = int(input('1 - чтение, 2 - запись: '))
+mode = int(input('1 - чтение, 2 - запись, 3 - изменение: '))
 if mode == 1:
     Search_phonebook()
 elif mode == 2:
     Entry_phonebook()
+elif mode == 3:
+    Change_phonebook()
